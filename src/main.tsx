@@ -18,7 +18,7 @@ const router=createBrowserRouter([{
     path:"record",
     element:<Record/>
   },{
-    path:"Allpodcasts",
+    path:"allpodcasts",
     element:<Mypods/>
   }]
 }])
