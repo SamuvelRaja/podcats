@@ -16,16 +16,17 @@ const Mynav = () => {
               <p>Home</p>
             </div>
           </Link>
+          <Link to={"/project"} className={`navlinks mx-2  ${location.pathname=="/project"?"active":"npg"}`}>
+            <div className="flex-col flex md:flex-row md:gap-2 items-center ">
+              <p>Projects</p>
+            </div>
+          </Link>
           <Link to={"/record"} className={`navlinks ml-2  ${location.pathname=="/record"?"active":"npg"}`}>
             <div className="flex-col flex md:flex-row md:gap-2 items-center ">
-              <p>New Podcast</p>
+              <p>New Project</p>
             </div>
           </Link>
-          <Link to={"/allpodcasts"} className={`navlinks ml-2  ${location.pathname=="/allpodcasts"?"active":"npg"}`}>
-            <div className="flex-col flex md:flex-row md:gap-2 items-center ">
-              <p>My podcasts</p>
-            </div>
-          </Link>
+          
         </div>
       </div>
       

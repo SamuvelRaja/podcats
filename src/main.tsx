@@ -5,7 +5,7 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.tsx'
 import Record from './pages/Record.tsx'
-import Mypods from './pages/Mypods.tsx'
+import Mypods from './pages/Recordings.tsx'
 
 const router=createBrowserRouter([{
   path:"/",
@@ -15,7 +15,7 @@ const router=createBrowserRouter([{
     element:<Home/>
   },
   {
-    path:"record",
+    path:"project/:id/record",
     element:<Record/>
   },{
     path:"allpodcasts",
