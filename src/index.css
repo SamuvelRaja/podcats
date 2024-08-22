@@ -1,68 +1,134 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
   }
-  a:hover {
-    color: #747bff;
+
+  @layer base {
+    
+    .navlinks{
+      @apply p-2 rounded-[6px] flex justify-between items-center hover:text-[#fff] transition-all duration-150 ease-out hover:ease-in border text-[#858585] border-transparent 
+    }
+    .navlinks.active{
+      @apply text-[#fff] bg-[#2c2c2c] border-[#393939]
+    }
+    .plinks{
+      @apply bg-[rgb(44,44,44)] text-[15px] py-[2px] px-2 border border-[#393939] text-[#858585] rounded-[6px]
+    }
+    .btn{
+      @apply py-2 px-6 rounded-[6px] border text-[#fff] cursor-pointer whitespace-nowrap
+    }
+    .btn:hover{
+      opacity: 0.65;
+    }
+    .btn-primary{
+      @apply bg-[#2c2c2c]  border-[#393939]
+    }
+    .btn-secondary{
+      @apply bg-[#161616]  border-[#252525]
+    }
+    .card{
+      @apply border border-[#252525]  rounded-[6px] overflow-hidden
+    }
+    .bg1card{
+      @apply card mt-6 mb-12 p-6 bg-[#1c1c1c]
+    }
+    .title{
+    @apply text-[40px] md:text-5xl pt-20 text-white font-medium leading-[1.20]
+    }
+    .p2{
+      @apply text-[#858585] text-[18px] my-6
+    }
+    .p1{
+      @apply text-[#858585] text-[16px] my-6
+    }
+    .psm{
+      @apply text-[#858585] text-[14px] my-6
+    }
+    .exp li{
+      @apply mb-2
+    }
+    .navlinks.npg img{
+      filter: brightness(0) saturate(100%) invert(47%) sepia(92%) saturate(0%) hue-rotate(203deg) brightness(93%) contrast(97%);
+    }
+    .navlinks:hover img{
+      filter: brightness(100%) ;
+    }
+    ul {
+      list-style-type: none; 
+    }
+
+    .exp li::marker {
+      content: "- "; 
+    }
+    
+   
   }
-  button {
-    background-color: #f9f9f9;
+  body{
+    background-color: rgb(22 22 22);
+    font-family: 'Inter' , 'sans-serif'; 
+    font-size: 14px;
+    color: #fff;
   }
-}
